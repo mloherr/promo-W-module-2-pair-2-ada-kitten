@@ -7,16 +7,56 @@ const kittenDescThree = document.querySelector('.js-card_descriptionThree').valu
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
-if( kittenDescOne.includes(descrSearchText) ) {
-  kittenDescTwo. //añadir classlist y hacer que se oculte con la clase .collapsed del CSS!
+const formSection = document.querySelector('.js-new-form');
+formSection.classList.remove('collapsed');
+
+
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.js-input-race');
+const inputDesc = document.querySelector('.js_in_search_desc');
+const labelMessageError = document.querySelector('.js-label-error');
+const buttonAdd = document.querySelector('.js-add-button');
+const buttonCancel = document.querySelector('.js-cancel-button');
+
+
+const valuePhoto = inputPhoto.value;
+const valueName = inputName.value;
+const valueRace = inputRace.value;
+const valueDesc = inputDesc.value;
+
+labelMessageError.classList.add('empty')
+
+buttonAdd.addEventListener('click', (event)=>{
+  if (valuePhoto === '' || valueName === ''|| valueRace === '' || valueDesc === '') {
+    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
+  } else {
+    //completa el código
   }
+});
+
+// Limpiar todos los inputs
+// Ocultar el formulario
+buttonCancel.addEventListener('click', (event)=>{
+  if (valuePhoto === '' || valueName === ''|| valueRace === '' || valueDesc === '') {
+    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
+  } else {
+    //completa el código
+  }
+});
+
+
+
+// if( kittenDescOne.includes(descrSearchText) ) {
+//    //añadir classlist y hacer que se oculte con la clase .collapsed del CSS!
+//   }
   
-  if( kittenDescTwo.includes(descrSearchText) ) {
+//   if( kittenDescTwo.includes(descrSearchText) ) {
     
-  }
+//   }
   
-  if( kittenDescThree.includes(descrSearchText) ) {
-  }
+//   if( kittenDescThree.includes(descrSearchText) ) {
+//   }
 
 // EJERCICIOS  1 Y 2
 // const list = document.querySelector('.js-list');

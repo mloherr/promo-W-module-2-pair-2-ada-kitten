@@ -37,23 +37,33 @@
     </header>
 
     <main>
-      <section class="new-form collapsed">
+      <section class="new-form js-new-form">
         <h2 class="title">¿Agregamos un nuevo gatito a Adalab?</h2>
         <form class="form">
           <input
-            class="input"
+            class="input js-input-photo"
             type="text"
             placeholder="Url de la foto"
-            required
-          />
-          <input class="input" type="text" placeholder="Nombre" required />
-          <input class="input" type="text" placeholder="Raza" />
-          <input class="input js_in_search_desc" type="text" value="elegante" />
+            required/>
+          <input 
+          class="input js-input-name" 
+          type="text" 
+          placeholder="Nombre" 
+          required />
+          <input 
+          class="input js-input-race" 
+          ype="text" 
+          placeholder="Raza"/>
+          <input 
+          class="input js_in_search_desc" 
+          placeholder="Descripción" 
+          type="text"/>
 
-          <label class=""></label>
-          <button class="button">Añadir</button>
-          <button class="button-cancel">Cancelar</button>
+          <label class="js-label-error"></label>
+          <button class="button js-add-button">Añadir</button>
+          <button class="button-cancel js-cancel-button">Cancelar</button>
         </form>
+
       </section>
 
       <section class="about-us">
