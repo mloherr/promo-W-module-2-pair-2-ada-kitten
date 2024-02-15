@@ -2,14 +2,15 @@
 
 const kittenDescOne = document.querySelector('.js-card_descriptionOne').value;
 const kittenDescTwo = document.querySelector('.js-card_descriptionTwo').value;
-const kittenDescThree = document.querySelector('.js-card_descriptionThree').value;
+const kittenDescThree = document.querySelector(
+  '.js-card_descriptionThree'
+).value;
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
-const formSection = document.querySelector('.js-new-form');
-formSection.classList.remove('collapsed');
-
+const newForm = document.querySelector('.js-new-form');
+newForm.classList.remove('collapsed');
 
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
@@ -19,42 +20,85 @@ const labelMessageError = document.querySelector('.js-label-error');
 const buttonAdd = document.querySelector('.js-add-button');
 const buttonCancel = document.querySelector('.js-cancel-button');
 
-
 const valuePhoto = inputPhoto.value;
 const valueName = inputName.value;
 const valueRace = inputRace.value;
 const valueDesc = inputDesc.value;
 
-labelMessageError.classList.add('empty')
+const linkNewFormElement = document.querySelector('.js-cat-form');
 
-buttonAdd.addEventListener('click', (event)=>{
-  if (valuePhoto === '' || valueName === ''|| valueRace === '' || valueDesc === '') {
-    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
+labelMessageError.classList.add('empty');
+
+buttonAdd.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (
+    valuePhoto === '' ||
+    valueName === '' ||
+    valueRace === '' ||
+    valueDesc === ''
+  ) {
+    labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
+  } else {
+    valuePhoto === true &&
+      valueName === true &&
+      valueRace === true &&
+      valueDesc === true;
+    const result = `${valuePhoto} + ${valueName} + ${valueRace} + ${valueDesc}`;
+    return result;
+    console.log(result);
+  }
+});
+
+// Si se rellenan todos los datos del gato, el botón añadir, añadirá al gato.
+
+// 1º. Recoger los valores del formulario.
+//2º. Si todos los valores del formulario están rellenos, entonces
+//3º El botón añadir, añadirá al gatico
+
+buttonCancel.addEventListener('click', (event) => {
+  if (
+    valuePhoto === '' ||
+    valueName === '' ||
+    valueRace === '' ||
+    valueDesc === ''
+  ) {
+    labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
   } else {
     //completa el código
   }
 });
 
-// Limpiar todos los inputs
-// Ocultar el formulario
-buttonCancel.addEventListener('click', (event)=>{
-  if (valuePhoto === '' || valueName === ''|| valueRace === '' || valueDesc === '') {
-    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
+/* 
+QUEREMOS que cuando el usuario haga click en +. muestre el formulario, y cuando volvamos a pulsarlo, se oculte.
+*/
+
+function showNewCatForm() {
+  newForm.classList.remove('collapsed');
+}
+
+function hideNewCatForm() {
+  newForm.classList.add('collapsed');
+}
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  if (newForm.classList.contains('collapsed')) {
+    showNewCatForm();
   } else {
-    //completa el código
+    hideNewCatForm();
   }
-});
+}
 
-
+linkNewFormElement.addEventListener('click', handleClickNewCatForm);
 
 // if( kittenDescOne.includes(descrSearchText) ) {
 //    //añadir classlist y hacer que se oculte con la clase .collapsed del CSS!
 //   }
-  
+
 //   if( kittenDescTwo.includes(descrSearchText) ) {
-    
+
 //   }
-  
+
 //   if( kittenDescThree.includes(descrSearchText) ) {
 //   }
 
@@ -99,7 +143,7 @@ buttonCancel.addEventListener('click', (event)=>{
 //             <p class="card_description">
 //             ${kittenDescTwo}
 //             </p>
-//           </li> 
+//           </li>
 // `;
 
 // const kittenImageThree = 'https://dev.adalab.es/maine-coon-cat.webp';
@@ -120,9 +164,7 @@ buttonCancel.addEventListener('click', (event)=>{
 //             <p class="card_description">
 //             ${kittenDescThree}
 //             </p>
-//           </li> 
+//           </li>
 // `;
 
 // list.innerHTML = `${kittenOne} ${kittenTwo} ${kittenThree}`;
-
-
