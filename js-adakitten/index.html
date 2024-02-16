@@ -37,7 +37,7 @@
     </header>
 
     <main>
-      <section class="new-form js-new-form">
+      <section class="new-form js-new-form collapsed">
         <h2 class="title">¿Agregamos un nuevo gatito a Adalab?</h2>
         <form class="form">
           <input
@@ -54,7 +54,7 @@
           />
           <input class="input js-input-race" type="text" placeholder="Raza" />
           <input
-            class="input js_in_search_desc"
+            class="input js_input_search_desc"
             placeholder="Descripción"
             type="text"
           />
@@ -73,7 +73,7 @@
       <section class="search">
         <h2 class="title">Filtrar / Buscar</h2>
         <form class="form">
-          <input class="input" type="text" placeholder="Descripción" />
+          <input class="input js_in_search_desc" type="text" placeholder="Descripción" />
           <input
             class="input"
             type="select"
@@ -82,13 +82,13 @@
             id="raza"
           />
 
-          <button class="button">Buscar</button>
+          <button class="button js-button-search ">Buscar</button>
         </form>
       </section>
 
       <section class="data">
         <ul class="list js-list">
-          <li class="card">
+          <li class="card js-kittenOne">
             <article>
               <img
                 class="card_img"
@@ -105,7 +105,7 @@
             </article>
           </li>
 
-          <li class="card">
+          <li class="card js-kittenTwo">
             <img
               class="card_img"
               src="https://dev.adalab.es/sphynx-gato.webp"
@@ -119,7 +119,7 @@
               gatuna que se caracteriza por la «ausencia» de pelo.
             </p>
           </li>
-          <li class="card">
+          <li class="card js-kittenThree">
             <img
               class="card_img"
               src="https://dev.adalab.es/maine-coon-cat.webp"
